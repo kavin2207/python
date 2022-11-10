@@ -3,7 +3,8 @@ pipeline{
   stages{
     stage('version'){
       steps{
-      bat 'python --version'
+        bat 'docker build -t pythonApp .'
+        bat 'docker run -it --rm --name myApp pythonApp'
       }
     }
   
